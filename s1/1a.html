@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<section id="main">
+    <div id="1" style="background-color:gray">1</div>
+    <div id="2" style="background-color:orange">2</div>
+    <div id="3" style="background-color:blue">3</div>
+    <div id="4" style="background-color:green">4</div>
+    <div id="5" style="background-color:lightgray">5</div>
+    <div id="6" style="background-color:yellow">6</div>
+    <div id="7" style="background-color:lightgoldenrodyellow">7</div>
+    <div id="8" style="background-color:greenyellow">8</div>
+    <div id="9" style="background-color:gray">9</div>
+    <div id="10" style="background-color:coral">10</div>
+</section>
+<script>
+    window.onload = function() {
+        console.log("ge")
+        $("#main").on("click",function(){
+            $('div').each(function (item) {
+                if(item==9){
+                    $(this).insertBefore($("#main")[0].firstChild);
+                }else{
+                    $(this).insertBefore($(this).next('div'));
+                }
+            });
+        })
+
+    };
+</script>
+</body>
+</html>
